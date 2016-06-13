@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Ziraat Bankasi</title>
+    </h:head>
+    <h:body>
+        <h:form> 
+            <center>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Hesap ID'niz"/>
+                    <h:outputText value="#{accountBean.account.accountId}"/>
+                    <h:outputLabel value="Hesap Tipini Seçin"/>
+                    <h:selectOneMenu value="#{accountBean.account.accountType}">
+                        <f:selectItem itemLabel="Normal `0-750´" itemValue="Normal"/>
+                        <f:selectItem itemLabel="Silver `1000-1500´" itemValue="Silver"/>
+                        <f:selectItem itemLabel="Gold `´2000-3000" itemValue="Gold"/>
+                        <f:selectItem itemLabel="Platinium `3500-5000´+" itemValue="Platinium"/>
+                        <f:selectItem itemLabel="Diamond Plus `10000+´" itemValue="Diamond Plus"/>
+                    </h:selectOneMenu>
+
+                    <h:outputLabel value="Bir Banka Seçin"/>
+                    <h:selectOneMenu value="#{accountBean.account.nameOf_Bank}">
+                        <f:selectItem itemLabel="Kuveyt Turk" itemValue="Kuveyt Turk"/>
+                        <f:selectItem itemLabel="Deniz Bank" itemValue="Deniz Bank"/>
+                        <f:selectItem itemLabel="Is Bank" itemValue="Is Bank"/>
+                        <f:selectItem itemLabel="Garanti Bank" itemValue="Garanti Bank"/>
+                        <f:selectItem itemLabel="Akbank" itemValue="Akbank"/>
+                        <f:selectItem itemLabel="HSBC" itemValue="HSBC"/>
+                        <f:selectItem itemLabel="Ziraat Bank" itemValue="Ziraat Bank"/>
+                        <f:selectItem itemLabel="Vakif Bank" itemValue="Vakif Bank"/>
+                        <f:selectItem itemLabel="Halk Bank" itemValue="Halk Bank"/>
+                        <f:selectItem itemLabel="ING Bank" itemValue="ING Bank"/>
+                        <f:selectItem itemLabel="TEB" itemValue="TEB"/>
+                    </h:selectOneMenu>
+
+                    <h:outputLabel value="Adınızı Girin"/>
+                    <h:inputText value="#{accountBean.account.customerFullName}"/>
+
+                    <h:outputLabel value="Limit Seçin"/>
+                    <h:selectOneMenu value="#{accountBean.account.limit_card}">
+                        <f:selectItem itemLabel="500" itemValue="500"/>
+                        <f:selectItem itemLabel="750" itemValue="750"/>
+                        <f:selectItem itemLabel="1000" itemValue="1000"/>
+                        <f:selectItem itemLabel="1250" itemValue="1250"/>
+                        <f:selectItem itemLabel="1500" itemValue="1500"/>
+                        <f:selectItem itemLabel="2000" itemValue="2000"/>
+                        <f:selectItem itemLabel="2500" itemValue="2500"/>
+                        <f:selectItem itemLabel="3000" itemValue="3000"/>
+                        <f:selectItem itemLabel="3500" itemValue="3500"/>
+                        <f:selectItem itemLabel="5000" itemValue="5000"/>
+                        <f:selectItem itemLabel="10000" itemValue="10000"/>
+                    </h:selectOneMenu>
+
+                    <h:commandButton value="Hesap Oluştur" action="#{accountBean.save()}"/>
+                </h:panelGrid>
+            </center>
+        </h:form>
+    </h:body>
+</html>
+
